@@ -10,7 +10,6 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
   // if a user forgets to sign out.
   // ...
   // New sign-in will be persisted with session persistence.
-  // return firebase.auth().signInWithEmailAndPassword(email, password);
 })
 .catch(function(error) {
   // Handle Errors here.
