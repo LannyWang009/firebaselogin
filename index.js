@@ -10,12 +10,13 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
   // if a user forgets to sign out.
   // ...
   // New sign-in will be persisted with session persistence.
-  return firebase.auth().signInWithEmailAndPassword(email, password);
+  // return firebase.auth().signInWithEmailAndPassword(email, password);
 })
 .catch(function(error) {
   // Handle Errors here.
   var errorCode = error.code;
   var errorMessage = error.message;
+  window.alert("Error Persistence " + errorCode + ": " + errorMessage )
 });
 
 
@@ -32,10 +33,10 @@ firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
     for (var i = 0; i < logOutFeatures.length; i++) {
-      logOutFeatures[i].style.display = 'block';
+      logOutFeatures[i].style.display = 'none';
     }
     for (var i = 0; i < logInFeatures.length; i++) {
-      logInFeatures[i].style.display = 'none';
+      logInFeatures[i].style.display = 'block';
     }
 
     var user = firebase.auth().currentUser;
@@ -47,16 +48,16 @@ firebase.auth().onAuthStateChanged(function(user) {
       } else {
         user_id = user.email
       }
-      document.getElementById("user_para").innerHTML = "Welcome User: " + user_id 
+      if (document.getElementById("user_para")){document.getElementById("user_para").innerHTML = "Welcome User: " + user_id}
     }
 
   } else {
     // No user is signed in.
     for (var i = 0; i < logOutFeatures.length; i++) {
-      logOutFeatures[i].style.display = 'none';
+      logOutFeatures[i].style.display = 'block';
     }
     for (var i = 0; i < logInFeatures.length; i++) {
-      logInFeatures[i].style.display = 'block';
+      logInFeatures[i].style.display = 'none';
     }
   }
 });
@@ -76,7 +77,7 @@ function login () {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    window.alert("Error " + errorCode + ": " + errorMessage )
+    window.alert("Error email & password " + errorCode + ": " + errorMessage )
   });  
 }
 
@@ -86,7 +87,7 @@ function loginAsGuest () {
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-    window.alert("Error " + errorCode + ": " + errorMessage )
+    window.alert("Error Anonymous " + errorCode + ": " + errorMessage )
   });
 }
 
@@ -98,6 +99,6 @@ function logout () {
         // An error happened.
         var errorCode = error.code;
         var errorMessage = error.message;
-        window.alert("Error " + errorCode + ": " + errorMessage )
+        window.alert("Error signout " + errorCode + ": " + errorMessage )
       });
 }
