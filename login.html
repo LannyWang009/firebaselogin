@@ -12,15 +12,16 @@
     <a href="login.html">login</a>
     <a href="dashboard.html">dashboard</a>
     
-    <div id="login_div" class="main-div">
+    <div id="main-div" class="loggedIn">
         <h3>Firebase Web Login</h3>
         <input type="email" placeholder="Email..." id="email_field"/>
         <input type="password" placeholder="Password..." id="password_field"/>
         
         <button onclick="login()">Login into Account</button>
+        <button onclick="loginAsGuest()">Login as Guest</button>
     </div>
 
-    <div id="user_div" class="loggedin-div">
+    <div id="loggedin-div" class="loggedOut">
         <h3>Welcome User</h3>
         <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
         <button onclick="logout()">Logout</button>
@@ -29,7 +30,7 @@
 
 
 
-<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -41,7 +42,23 @@
     messagingSenderId: "344263749199"
   };
   firebase.initializeApp(config);
+</script> -->
+
+<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBPjhSEiuuMDcuPieS59MjjixHOhUVCPEc",
+    authDomain: "maps-api-trial-222000.firebaseapp.com",
+    databaseURL: "https://maps-api-trial-222000.firebaseio.com",
+    projectId: "maps-api-trial-222000",
+    storageBucket: "maps-api-trial-222000.appspot.com",
+    messagingSenderId: "367108598743"
+  };
+  firebase.initializeApp(config);
 </script>
+
+
 <script src="index.js"></script>
 </body>
 </html>
