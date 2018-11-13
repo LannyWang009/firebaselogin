@@ -101,3 +101,23 @@ function logout () {
         window.alert("Error signout " + errorCode + ": " + errorMessage )
       });
 }
+
+//~~~~~ Call this function for signing up ~~~~~~~~`
+function signup () {
+  //get elements
+  var userEmail = document.getElementById("txtemail").value
+  var userPassword1 = document.getElementById("txtpassword1").value
+  var userPassword2 = document.getElementById("txtpassword2").value
+  //Validation: email valid, password matches
+  if (!userPassword1 === userPassword2) {
+    window.alert("Password does not match")
+    return
+  }
+  //Sign up function 
+  firebase.auth().createUserWithEmailAndPassword(userEmail, userPassword1).catch(function(error) {
+    // Handle Errors here.
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    window.alert("Error email & password " + errorCode + ": " + errorMessage )
+  });  
+}
