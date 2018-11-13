@@ -4,70 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login</title>
+    <title>Dashboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css ">
 </head>
 <body>
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-container-nav">
-            <div class="flex-item">
-                <a class="navbar-brand"><img src="firebase_28dp.png"></a>
-                <span class="navbar-text">FirebaseLogin</span>
-            </div>
-            <div class="flex-item">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="home.html" class="nav-link">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="login.html" class="nav-link">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="dashboard.html" class="nav-link">Dashboard</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
+    <div id="navigation"></div>
 
-    <div class="loggedOut" style="display: none;">
-        You're logged out
-    </div>
+    <div class="loggedOut" style="display: none;">You're logged out</div>
 
+    <div class="loggedIn" style="display: none;">You're logged in</div>
 
-    <div class="loggedIn" style="display: none;">
-        You're logged in
-    </div>
-
-
-
-
-    
-<!-- <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCL_5SYbRqWFfsHTx2YzG-k1i9fvGynZgk",
-    authDomain: "my-project-1541724420022.firebaseapp.com",
-    databaseURL: "https://my-project-1541724420022.firebaseio.com",
-    projectId: "my-project-1541724420022",
-    storageBucket: "my-project-1541724420022.appspot.com",
-    messagingSenderId: "344263749199"
-  };
-  firebase.initializeApp(config);
-</script> -->
-
-<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyBPjhSEiuuMDcuPieS59MjjixHOhUVCPEc",
-    authDomain: "maps-api-trial-222000.firebaseapp.com",
-    databaseURL: "https://maps-api-trial-222000.firebaseio.com",
-    projectId: "maps-api-trial-222000",
-    storageBucket: "maps-api-trial-222000.appspot.com",
-    messagingSenderId: "367108598743"
-  };
-  firebase.initializeApp(config);
-</script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyBPjhSEiuuMDcuPieS59MjjixHOhUVCPEc",
+            authDomain: "maps-api-trial-222000.firebaseapp.com",
+            databaseURL: "https://maps-api-trial-222000.firebaseio.com",
+            projectId: "maps-api-trial-222000",
+            storageBucket: "maps-api-trial-222000.appspot.com",
+            messagingSenderId: "367108598743"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="index.js"></script>
 </body>
