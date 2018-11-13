@@ -4,6 +4,23 @@ body {
     margin: 0px;
     /* font-family:  */
 }
+.flex-container-nav {
+    display: flex;
+    padding-left: 5%;
+    padding-right: 5%;
+    /* border-style: dotted;
+    border-color: red; */
+}
+.flex-item {
+    flex-grow: 1;
+    /* border-style: dotted;
+    border-color: red; */
+}
+.flex-item:nth-child(2) {
+    border-color: blue;
+    display: flex;
+    justify-content: flex-end;
+}
 input, button {
     font-family: sans-serif;
 }
