@@ -23,6 +23,7 @@ firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
 // Check user status
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+
 firebase.auth().onAuthStateChanged(function(user) {
   // Any logged out features need to have the class "loggedOut"
   var logOutFeatures = document.getElementsByClassName('loggedOut')
@@ -30,7 +31,31 @@ firebase.auth().onAuthStateChanged(function(user) {
   var logInFeatures = document.getElementsByClassName('loggedIn')
 
   if (user) {
-    // User is signed in.
+    // User is signed in; Enable dashboard page
+    var navigation = document.getElementById('navigation')
+    navigation.innerHTML = `
+        <div id="navigation">
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-container-nav">
+              <div class="flex-item">
+                  <a class="navbar-brand"><img src="firebase_28dp.png"></a>
+                  <span class="navbar-text">FirebaseLogin</span>
+              </div>
+              <div class="flex-item">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a href="home.html" class="nav-link">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="dashboard.html" class="nav-link">Dashboard</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+        </div>
+    `
     for (var i = 0; i < logOutFeatures.length; i++) {
       logOutFeatures[i].style.display = 'none';
     }
@@ -51,15 +76,43 @@ firebase.auth().onAuthStateChanged(function(user) {
     }
 
   } else {
-    // No user is signed in.
+    // No user is signed in; Disable dashboard page
+    var navigation = document.getElementById('navigation')
+    navigation.innerHTML = `
+        <div id="navigation">
+          <nav class="navbar navbar-expand-md navbar-dark bg-dark flex-container-nav">
+              <div class="flex-item">
+                  <a class="navbar-brand"><img src="firebase_28dp.png"></a>
+                  <span class="navbar-text">FirebaseLogin</span>
+              </div>
+              <div class="flex-item">
+                  <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a href="home.html" class="nav-link">Home</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="login.html" class="nav-link">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="signup.html" class="nav-link">SignUp</a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="login.html" class="nav-link">Dashboard</a>
+                      </li>
+                  </ul>
+              </div>
+          </nav>
+        </div>
+    `
     for (var i = 0; i < logOutFeatures.length; i++) {
       logOutFeatures[i].style.display = 'block';
     }
     for (var i = 0; i < logInFeatures.length; i++) {
       logInFeatures[i].style.display = 'none';
     }
+
   }
-});
+})
 
 
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
