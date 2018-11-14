@@ -1,3 +1,14 @@
+// Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCL_5SYbRqWFfsHTx2YzG-k1i9fvGynZgk",
+      authDomain: "my-project-1541724420022.firebaseapp.com",
+      databaseURL: "https://my-project-1541724420022.firebaseio.com",
+      projectId: "my-project-1541724420022",
+      storageBucket: "my-project-1541724420022.appspot.com",
+      messagingSenderId: "344263749199"
+  };
+  firebase.initializeApp(config);
+
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // Set Authentication State Persistence
 //    Options: 'local', 'session', 'none'
